@@ -1,0 +1,22 @@
+COMPILATION INSTRUCTIONS:
+ - After decompressing the file, CD into the '/src' folder and run:
+   * javac simulator/*.java
+
+EXECUTION INSTRUCTIONS:
+ - The simulator may run without any command line options, as in:
+   * $ java simulator/simulator Benchmark1
+
+ - There are command line options to set the parameters of the simulator:
+   * -NF, NQ, -ND, -NI, -NW, -NR, -NC and -NB;
+
+ - There are command line options for dumping information about the simulator:
+   * -dump_mem {begin} {end}, -dump_regs and -dump_branch
+
+ - Combining simulator parameters and output options would result in:
+   * java simulator/simulator -NR 4 -NW 4 -NC 4 -dump_mem 0 200 Benchmark1
+
+NOTES:
+
+All benchmarks are located in /src/simulator. You should not specify the full path of the program file. 
+
+At the end of execution, the simulator prints the summary of the statistics for the program executed.

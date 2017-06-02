@@ -1,0 +1,19 @@
+		ORI		R1, R0, 56
+		ORI		R2, R0, 256
+		ORI		R3, R0, 2
+		L.D		F2, 100(R0)
+loop:		L.D		F0, 0(R1)
+		MUL.D		F4,F0,F2
+		S.D		F4, 0(R1)
+		DADDI		R1, R1, -8
+		BNEZ		R1, loop
+
+DATA
+		Mem(100) = 10.0
+		Mem(56)  = 100.0
+		Mem(48)  = 200.0
+		Mem(40)  = 300.0
+		Mem(32)  = 400.0
+		Mem(24)  = 500.0
+		Mem(16)  = 600.0
+		Mem(8)   = 700.0

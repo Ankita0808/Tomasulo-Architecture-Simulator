@@ -1,0 +1,35 @@
+		ORI		R1, R0, 100
+		ORI		R2, R0, 200
+		ORI		R3, R0, 7
+		ORI		R4, R0, 2
+		L.D		F0, 300(R0)
+		L.D		F2, 308(R0)
+loop:		LD		R5, 0(R1)
+		MUL.D		F4, F2, F0
+		L.D		F6, 0(R2)
+		ADD.D		F6, F4, F6
+		S.D		F6, 0(R2)
+		DMUL		R5, R5, R4
+		SD		R5, 0(R1)
+DADDI		R1, R1, 8
+		DADDI		R2, R2, 8
+		DADDI		R3, R3, -1
+		BNEZ		R3, loop
+
+DATA
+		Mem(300) = 5.0
+		Mem(308) = 2.0
+		Mem(100) = 100
+		Mem(108) = 200
+		Mem(116) = 300
+		Mem(124) = 400
+		Mem(132) = 500
+		Mem(140) = 600
+		Mem(148) = 700
+		Mem(200) = 700.0
+		Mem(208) = 600.0
+		Mem(216) = 500.0
+		Mem(224) = 400.0
+		Mem(232) = 300.0
+		Mem(240) = 200.0
+		Mem(248) = 100.0
